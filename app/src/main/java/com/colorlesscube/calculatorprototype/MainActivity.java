@@ -8,55 +8,14 @@ import android.view.View;
 import android.view.Window;
 
 public class MainActivity extends Activity {
-    public void onClickListener
-    public void onClickListener
-    public void onClickListener
-    public void onClickListener
-    public void onClickListener
-    public void onClickListener
     int i, Oper;
     float Result = 0;
     String[] SaveRes = new String[100];
     String token;
-    View v
-    View v
-    View v
-    View v
-    View v
-    View v
+
     private prototypeEditText formula;
 
-    {
-        updateTextView("+");
-    }
 
-    {
-        updateTextView("-");
-    }
-
-    +(
-
-    {
-        updateTextView("*");
-    }
-
-    )
-
-    {
-        updateTextView("/");
-    }
-
-    {
-        updateTextView("=");
-    }
-
-    -(
-
-    {
-        updateTextView(".");
-    }
-
-    )
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,7 +32,6 @@ public class MainActivity extends Activity {
         return true;
     }
 
-    *(
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -89,8 +47,6 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    )
-
     public void onClickListener0(View v) {
         updateTextView("0");
     }
@@ -99,13 +55,10 @@ public class MainActivity extends Activity {
         updateTextView("1");
     }
 
-    /(
-
     public void onClickListener2(View v) {
         updateTextView("2");
     }
 
-    )
     public void onClickListener3(View v) {
         updateTextView("3");
     }
@@ -114,12 +67,10 @@ public class MainActivity extends Activity {
         updateTextView("4");
     }
 
-    /(
     public void onClickListener5(View v) {
         updateTextView("5");
     }
 
-    )
     public void onClickListener6(View v) {
         updateTextView("6");
     }
@@ -128,23 +79,37 @@ public class MainActivity extends Activity {
         updateTextView("7");
     }
 
-    /(
-
     public void onClickListener8(View v) {
         updateTextView("8");
     }
-
-    )
 
     public void onClickListener9(View v) {
         updateTextView("9");
     }
 
     public void onClickListenerClr(View v) {
-
         formulaUP.setText("");
         formulaDOWN.setText("");
+    }
 
+    public void onClickListenersum(View v) {
+        updateTextView("+");
+    }
+
+    public void onClickListenerminus(View v) {
+        updateTextView("-");
+    }
+
+    public void onClickListenerdiv(View v) {
+        updateTextView("/");
+    }
+
+    public void onClickListenermulti(View v) {
+        updateTextView("*");
+    }
+
+    public void onClickListenerpoint(View v) {
+        updateTextView(".");
     }
 
     public void updateTextView(String text) {
