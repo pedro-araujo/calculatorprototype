@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/display"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="4dip"
+    android:orientation="vertical">
+
+    <com.colorlesscube.calculatorprototype.prototypeEditText
+        android:id="@+id/formula"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#666"
+        android:inputType="text|textNoSuggestions"
+        android:paddingBottom="48dip"
+        android:paddingEnd="16dip"
+        android:paddingStart="16dip"
+        android:paddingTop="24dip"
+        android:textColor="#000"
+        android:textSize="36sp" />
+</RelativeLayout>

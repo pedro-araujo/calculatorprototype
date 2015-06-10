@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include layout="@layout/display" />
+
+    <com.colorlesscube.calculatorprototype.prototypePadViewPager
+        android:id="@+id/pad_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:overScrollMode="never">
+
+        <include layout="@layout/numericpad" />
+
+        <include layout="@layout/numericpad_advanced" />
+
+    </com.colorlesscube.calculatorprototype.prototypePadViewPager>
+
+</LinearLayout>

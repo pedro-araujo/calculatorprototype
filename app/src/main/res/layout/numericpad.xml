@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.colorlesscube.calculatorprototype.prototypePadLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/numericpad"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="3"
+    android:paddingBottom="20dip"
+    android:paddingEnd="12dip"
+    android:paddingStart="12dip"
+    android:paddingTop="12dip"
+    android:rowCount="4">
+
+    <Button
+        style="@style/PadButtonStyle"
+        android:onClick="onClickListener1"
+        android:text="9" />
+
+    <Button
+        style="@style/PadButtonStyle"
+        android:onClick="onClickListener2"
+        android:text="8" />
+
+    <Button
+        style="@style/PadButtonStyle"
+        android:onClick="onClickListener3"
+        android:text="7" />
+
+    <Button
+        style="@style/PadButtonStyle"
+        android:onClick="onClickListener4"
+        android:text="6" />
+
+    <Button
+        style="@style/PadButtonStyle"
+        android:onClick="onClickListener5"
+        android:text="5" />
+
+    <Button
+        style="@style/PadButtonStyle"
+        android:onClick="onClickListener6"
+        android:text="4" />
+
+    <Button
+        style="@style/PadButtonStyle"
+        android:onClick="onClickListener7"
+        android:text="3" />
+
+    <Button
+        style="@style/PadButtonStyle"
+        android:onClick="onClickListener8"
+        android:text="2" />
+
+    <Button
+        style="@style/PadButtonStyle"
+        android:onClick="onClickListener9"
+        android:text="1" />
+
+    <Button
+        style="@style/PadButtonStyle"
+        android:onClick="onClickListenerDot"
+        android:text="." />
+
+    <Button
+        style="@style/PadButtonStyle"
+        android:onClick="onClickListener0"
+        android:text="0" />
+
+    <Button
+        style="@style/PadButtonStyle"
+        android:onClick="onClickListenerEqual"
+        android:text="=" />
+
+</com.colorlesscube.calculatorprototype.prototypePadLayout>

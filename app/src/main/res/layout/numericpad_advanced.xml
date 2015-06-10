@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.colorlesscube.calculatorprototype.prototypePadLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/numericpad_advanced"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="1"
+    android:paddingBottom="20dip"
+    android:paddingEnd="12dip"
+    android:paddingStart="12dip"
+    android:paddingTop="12dip"
+    android:rowCount="2">
+
+    <Button
+        style="@style/PadButtonStyle2"
+        android:onClick="onClickListener1"
+        android:text="Clr" />
+
+    <Button
+        style="@style/PadButtonStyle2"
+        android:onClick="onClickListener2"
+        android:text="=" />
+</com.colorlesscube.calculatorprototype.prototypePadLayout>
