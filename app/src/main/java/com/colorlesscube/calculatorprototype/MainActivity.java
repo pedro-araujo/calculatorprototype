@@ -6,22 +6,57 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 
 public class MainActivity extends Activity {
-    Button button0;
-    Button button1;
-    Button button2;
-    Button button3;
-    Button button4;
-    Button button5;
-    Button button6;
-    Button button7;
-    Button button9;
-    Button buttonEquals;
-    Button buttonClr;
+    public void onClickListener
+    public void onClickListener
+    public void onClickListener
+    public void onClickListener
+    public void onClickListener
+    public void onClickListener
+    int i, Oper;
+    float Result = 0;
+    String[] SaveRes = new String[100];
+    String token;
+    View v
+    View v
+    View v
+    View v
+    View v
+    View v
     private prototypeEditText formula;
 
+    {
+        updateTextView("+");
+    }
+
+    {
+        updateTextView("-");
+    }
+
+    +(
+
+    {
+        updateTextView("*");
+    }
+
+    )
+
+    {
+        updateTextView("/");
+    }
+
+    {
+        updateTextView("=");
+    }
+
+    -(
+
+    {
+        updateTextView(".");
+    }
+
+    )
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +73,7 @@ public class MainActivity extends Activity {
         return true;
     }
 
+    *(
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -53,6 +89,8 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    )
+
     public void onClickListener0(View v) {
         updateTextView("0");
     }
@@ -61,10 +99,13 @@ public class MainActivity extends Activity {
         updateTextView("1");
     }
 
+    /(
+
     public void onClickListener2(View v) {
         updateTextView("2");
     }
 
+    )
     public void onClickListener3(View v) {
         updateTextView("3");
     }
@@ -73,10 +114,12 @@ public class MainActivity extends Activity {
         updateTextView("4");
     }
 
+    /(
     public void onClickListener5(View v) {
         updateTextView("5");
     }
 
+    )
     public void onClickListener6(View v) {
         updateTextView("6");
     }
@@ -85,24 +128,57 @@ public class MainActivity extends Activity {
         updateTextView("7");
     }
 
+    /(
+
     public void onClickListener8(View v) {
         updateTextView("8");
     }
+
+    )
 
     public void onClickListener9(View v) {
         updateTextView("9");
     }
 
     public void onClickListenerClr(View v) {
-        formula.setText("");
+
+        formulaUP.setText("");
+        formulaDOWN.setText("");
+
     }
 
     public void updateTextView(String text) {
-        int length = text.length();
-
-        String calc = formula.getText().toString();
-
-        calc = calc + text;
-        formula.setText(calc);
+        String calc = formulaDOWN.getText().toString();
+        switch (text) {
+            case "+":
+                formulaUPsetText(calc + text);
+                Result = Result + Float.parseFloat(formulaDOWN.getText().toString());
+                Oper = 1;
+                break;
+            case "-":
+                formulaUPsetText(calc + text);
+                Result = Result - Float.parseFloat(formulaDOWN.getText().toString());
+                Oper = 2;
+                break;
+            case "*":
+                formulaUPsetText(calc + text);
+                Result = Result * Float.parseFloat(formulaDOWN.getText().toString());
+                Oper = 3;
+                break;
+            case "/":
+                formulaUPsetText(calc + text);
+                Result = Result / Float.parseFloat(formulaDOWN.getText().toString());
+                Oper = 4;
+                break;
+            case "=":
+                formulaUPsetText("");
+                Result = Result / Float.parseFloat(formulaDOWN.getText().toString());
+                formulaDOWN.setText(Result);
+                Oper = 5;
+                break;
+            default:
+                formulaDOWN.setText(calc + text);
+                break;
+        }
     }
 }
