@@ -8,15 +8,19 @@
     android:orientation="vertical">
 
     <com.colorlesscube.calculatorprototype.prototypeEditText
-        android:id="@+id/formula"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#666"
+        android:id="@+id/history_2"
         android:inputType="text|textNoSuggestions"
-        android:paddingBottom="48dip"
-        android:paddingEnd="16dip"
-        android:paddingStart="16dip"
-        android:paddingTop="24dip"
-        android:textColor="#000"
-        android:textSize="36sp" />
+        style="@style/DisplayStyle"/>
+
+    <com.colorlesscube.calculatorprototype.prototypeEditText
+        android:id="@+id/history_1"
+        android:inputType="text|textNoSuggestions"
+        android:layout_below="@id/history_2"
+        style="@style/DisplayStyle"/>
+
+    <com.colorlesscube.calculatorprototype.prototypeEditText
+        android:id="@+id/formula"
+        android:inputType="text|textNoSuggestions"
+        android:layout_below="@id/history_1"
+        style="@style/DisplayStyle"/>
 </RelativeLayout>

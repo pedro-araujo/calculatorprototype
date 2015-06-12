@@ -12,7 +12,7 @@
         android:layout_weight="1"
         android:overScrollMode="never">
 
-        <include layout="@layout/numericpad" />
+        <include layout="@layout/numericpad_simple" />
 
         <include layout="@layout/numericpad_advanced" />
 

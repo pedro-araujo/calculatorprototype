@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.colorlesscube.calculatorprototype.prototypePadLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/numericpad_simple"
+    android:columnCount="4"
+    android:rowCount="4"
+    style="@style/NumericPadSimpleStyle">
+
+    <Button
+        android:id="@+id/button_nine"
+        android:text="@string/nine"
+        android:onClick="onClickListener9"
+        style="@style/NumericPadSimpleButtonStyle"/>
+
+    <Button
+        android:id="@+id/button_eight"
+        android:text="@string/eight"
+        android:onClick="onClickListener8"
+        style="@style/NumericPadSimpleButtonStyle"/>
+
+    <Button
+        android:id="@+id/button_seven"
+        android:text="@string/seven"
+        android:onClick="onClickListener7"
+        style="@style/NumericPadSimpleButtonStyle"/>
+
+    <Button
+        android:id="@+id/button_plus"
+        android:text="@string/plus"
+        android:onClick="onClickListenerPlus"
+        style="@style/NumericPadSimpleButtonStyle"/>
+
+    <Button
+        android:id="@+id/button_six"
+        android:text="@string/six"
+        android:onClick="onClickListener6"
+        style="@style/NumericPadSimpleButtonStyle"/>
+
+    <Button
+        android:id="@+id/button_five"
+        android:text="@string/five"
+        android:onClick="onClickListener5"
+        style="@style/NumericPadSimpleButtonStyle"/>
+
+    <Button
+        android:id="@+id/button_four"
+        android:text="@string/four"
+        android:onClick="onClickListener4"
+        style="@style/NumericPadSimpleButtonStyle"/>
+
+    <Button
+        android:id="@+id/button_minus"
+        android:text="@string/minus"
+        android:onClick="onClickListenerMinus"
+        style="@style/NumericPadSimpleButtonStyle"/>
+
+    <Button
+        android:id="@+id/button_three"
+        android:text="@string/three"
+        android:onClick="onClickListener3"
+        style="@style/NumericPadSimpleButtonStyle"/>
+
+    <Button
+        android:id="@+id/button_two"
+        android:text="@string/two"
+        android:onClick="onClickListener2"
+        style="@style/NumericPadSimpleButtonStyle"/>
+
+    <Button
+        android:id="@+id/button_one"
+        android:text="@string/one"
+        android:onClick="onClickListener1"
+        style="@style/NumericPadSimpleButtonStyle"/>
+
+    <Button
+        android:id="@+id/button_times"
+        android:text="@string/times"
+        android:onClick="onClickListenerTimes"
+        style="@style/NumericPadSimpleButtonStyle"/>
+
+    <Button
+        android:id="@+id/button_dot"
+        android:text="@string/dot"
+        android:onClick="onClickListenerDot"
+        style="@style/NumericPadSimpleButtonStyle"/>
+
+    <Button
+        android:id="@+id/button_zero"
+        android:text="@string/zero"
+        android:onClick="onClickListener0"
+        style="@style/NumericPadSimpleButtonStyle"/>
+
+    <Button
+        android:id="@+id/button_equal"
+        android:text="@string/equal"
+        android:onClick="onClickListenerEqual"
+        style="@style/NumericPadSimpleButtonStyle"/>
+
+    <Button
+        android:id="@+id/button_div"
+        android:text="@string/div"
+        android:onClick="onClickListenerDiv"
+        style="@style/NumericPadSimpleButtonStyle"/>
+</com.colorlesscube.calculatorprototype.prototypePadLayout>

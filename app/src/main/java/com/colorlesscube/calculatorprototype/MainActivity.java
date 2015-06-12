@@ -14,7 +14,8 @@ public class MainActivity extends Activity {
     String token;
 
     private prototypeEditText formula;
-
+    private prototypeEditText history_1;
+    private prototypeEditText history_2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         formula = (prototypeEditText) findViewById(R.id.formula);
+        history_1 = (prototypeEditText) findViewById(R.id.history_1);
+        history_2 = (prototypeEditText) findViewById(R.id.history_2);
     }
 
     @Override
@@ -88,61 +91,72 @@ public class MainActivity extends Activity {
     }
 
     public void onClickListenerClr(View v) {
-        formulaUP.setText("");
-        formulaDOWN.setText("");
+        formula.setText("");
+        history_1.setText("");
+        history_2.setText("");
     }
 
-    public void onClickListenersum(View v) {
+    public void onClickListenerPlus(View v) {
         updateTextView("+");
     }
 
-    public void onClickListenerminus(View v) {
+    public void onClickListenerMinus(View v) {
         updateTextView("-");
     }
 
-    public void onClickListenerdiv(View v) {
-        updateTextView("/");
-    }
-
-    public void onClickListenermulti(View v) {
+    public void onClickListenerTimes(View v) {
         updateTextView("*");
     }
 
-    public void onClickListenerpoint(View v) {
+    public void onClickListenerDiv(View v) {
+        updateTextView("/");
+    }
+
+    public void onClickListenerDot(View v) {
         updateTextView(".");
     }
 
+    public void onClickListenerEqual(View v) {
+        updateTextView("=");
+    }
+
     public void updateTextView(String text) {
-        String calc = formulaDOWN.getText().toString();
+        String calc = formula.getText().toString();
+
         switch (text) {
             case "+":
-                formulaUPsetText(calc + text);
-                Result = Result + Float.parseFloat(formulaDOWN.getText().toString());
+                formula.setText(calc + text);
+
+                //You should do the result here. Let's imagine that the user picks a 7 and then a +
+                // The function below will try to do the following operation:
+                // Result + TextInserted = 0 + "7+"
+                // This is an invalid operation.
+                Result = Result + Float.parseFloat(formula.getText().toString());
                 Oper = 1;
                 break;
             case "-":
-                formulaUPsetText(calc + text);
-                Result = Result - Float.parseFloat(formulaDOWN.getText().toString());
+                formula.setText(calc + text);
+                Result = Result - Float.parseFloat(formula.getText().toString());
                 Oper = 2;
                 break;
             case "*":
-                formulaUPsetText(calc + text);
-                Result = Result * Float.parseFloat(formulaDOWN.getText().toString());
+                formula.setText(calc + text);
+                Result = Result * Float.parseFloat(formula.getText().toString());
                 Oper = 3;
                 break;
             case "/":
-                formulaUPsetText(calc + text);
-                Result = Result / Float.parseFloat(formulaDOWN.getText().toString());
+                formula.setText(calc + text);
+                Result = Result / Float.parseFloat(formula.getText().toString());
                 Oper = 4;
                 break;
             case "=":
-                formulaUPsetText("");
-                Result = Result / Float.parseFloat(formulaDOWN.getText().toString());
-                formulaDOWN.setText(Result);
+                formula.setText("");
+                Result = Result / Float.parseFloat(formula.getText().toString());
+                formula.setText(String.valueOf(Result));
                 Oper = 5;
                 break;
             default:
-                formulaDOWN.setText(calc + text);
+                formula.setText(calc + text);
                 break;
         }
     }
