@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.Window;
 
 public class MainActivity extends Activity {
-    int i, Oper;
+    int i, Oper, ResultInt, Oper1;
     float Result = 0;
     String[] SaveRes = new String[100];
     String token;
@@ -94,6 +94,7 @@ public class MainActivity extends Activity {
         formula.setText("");
         history_1.setText("");
         history_2.setText("");
+        Result = 0;
     }
 
     public void onClickListenerPlus(View v) {
@@ -120,43 +121,75 @@ public class MainActivity extends Activity {
         updateTextView("=");
     }
 
+    public void TransformResult (float Res){
+        if (Res == Math.round(Result)) {
+            ResultInt = (int)Res;
+            formula.setText(Integer.toString(ResultInt));
+        }else{
+            formula.setText(Float.toString(Res));
+        }
+    }
+
     public void updateTextView(String text) {
-        String calc = formula.getText().toString();
+        String calc  = history_1.getText().toString();
+        String calc1 = formula.getText().toString();
 
         switch (text) {
             case "+":
-                formula.setText(calc + text);
 
                 //You should do the result here. Let's imagine that the user picks a 7 and then a +
                 // The function below will try to do the following operation:
                 // Result + TextInserted = 0 + "7+"
                 // This is an invalid operation.
                 Result = Result + Float.parseFloat(formula.getText().toString());
-                Oper = 1;
+                history_1.setText(calc + calc1 + text);
+                TransformResult(Result);
+                Oper = 1;Oper1 = 1;
                 break;
             case "-":
-                formula.setText(calc + text);
                 Result = Result - Float.parseFloat(formula.getText().toString());
-                Oper = 2;
+                history_1.setText(calc + calc1 + text);
+                TransformResult(Result);
+                Oper = 2;Oper1 = 1;
                 break;
             case "*":
-                formula.setText(calc + text);
                 Result = Result * Float.parseFloat(formula.getText().toString());
-                Oper = 3;
+                history_1.setText(calc + calc1 + text);
+                TransformResult(Result);
+                Oper = 3;Oper1 = 1;
                 break;
             case "/":
-                formula.setText(calc + text);
                 Result = Result / Float.parseFloat(formula.getText().toString());
-                Oper = 4;
+                history_1.setText(calc + calc1 + text);
+                TransformResult(Result);
+                Oper = 4;Oper1 = 1;
                 break;
             case "=":
-                formula.setText("");
-                Result = Result / Float.parseFloat(formula.getText().toString());
-                formula.setText(String.valueOf(Result));
-                Oper = 5;
+                history_1.setText("");
+                switch (Oper) {
+                    case 1:
+                        Result = Result + Float.parseFloat(formula.getText().toString());
+                        break;
+                    case 2:
+                        Result = Result - Float.parseFloat(formula.getText().toString());
+                        break;
+                    case 3:
+                        Result = Result * Float.parseFloat(formula.getText().toString());
+                        break;
+                    case 4:
+                        Result = Result / Float.parseFloat(formula.getText().toString());
+                        break;
+                }
+                TransformResult(Result);
+                Oper = 5; Result = 0;Oper1 = 1;
                 break;
             default:
-                formula.setText(calc + text);
+                if (Oper1 != 0) {
+                    formula.setText("");
+                    calc1 = formula.getText().toString();
+                }
+                formula.setText(calc1 + text);
+                Oper1 = 0;
                 break;
         }
     }
