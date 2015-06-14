@@ -9,7 +9,7 @@ import android.view.Window;
 
 public class MainActivity extends Activity {
     int i, Oper, ResultInt, Oper1;
-    float Result = 0;
+    float Result = 0, SaveF;
     String[] SaveRes = new String[100];
     String token;
 
@@ -129,6 +129,25 @@ public class MainActivity extends Activity {
             formula.setText(Float.toString(Res));
         }
     }
+    public void DoOperators (){
+        if (Oper == 1) {
+            Result = Result + Float.parseFloat(formula.getText().toString());
+            TransformResult(Result);
+        }
+        if (Oper == 2) {
+            Result = Result - Float.parseFloat(formula.getText().toString());
+            TransformResult(Result);
+        }
+        if (Oper == 3) {
+            if (Result == 0){ Result = 1;}
+            Result = Result * Float.parseFloat(formula.getText().toString());
+            TransformResult(Result);
+        }
+        if (Oper == 4) {
+            Result = Result / Float.parseFloat(formula.getText().toString());
+            TransformResult(Result);
+        }
+    }
 
     public void updateTextView(String text) {
         String calc  = history_1.getText().toString();
@@ -136,48 +155,45 @@ public class MainActivity extends Activity {
 
         switch (text) {
             case "+":
-
-                //You should do the result here. Let's imagine that the user picks a 7 and then a +
-                // The function below will try to do the following operation:
-                // Result + TextInserted = 0 + "7+"
-                // This is an invalid operation.
-                Result = Result + Float.parseFloat(formula.getText().toString());
+                DoOperators();
                 history_1.setText(calc + calc1 + text);
-                TransformResult(Result);
+                Result = Float.parseFloat(formula.getText().toString());
                 Oper = 1;Oper1 = 1;
                 break;
             case "-":
-                Result = Result - Float.parseFloat(formula.getText().toString());
+                DoOperators();
                 history_1.setText(calc + calc1 + text);
-                TransformResult(Result);
+                Result = Float.parseFloat(formula.getText().toString());
                 Oper = 2;Oper1 = 1;
                 break;
             case "*":
-                Result = Result * Float.parseFloat(formula.getText().toString());
+                DoOperators();
                 history_1.setText(calc + calc1 + text);
-                TransformResult(Result);
+                Result = Float.parseFloat(formula.getText().toString());
                 Oper = 3;Oper1 = 1;
                 break;
             case "/":
-                Result = Result / Float.parseFloat(formula.getText().toString());
+                DoOperators();
                 history_1.setText(calc + calc1 + text);
-                TransformResult(Result);
+                Result = Float.parseFloat(formula.getText().toString());
                 Oper = 4;Oper1 = 1;
                 break;
             case "=":
                 history_1.setText("");
+                if (Oper1 == 0) {SaveF = Float.parseFloat(formula.getText().toString());}
+                else{SaveF = 0;}
                 switch (Oper) {
                     case 1:
-                        Result = Result + Float.parseFloat(formula.getText().toString());
+                        Result = Result + SaveF;
                         break;
                     case 2:
-                        Result = Result - Float.parseFloat(formula.getText().toString());
+                        Result = Result - SaveF;
                         break;
                     case 3:
-                        Result = Result * Float.parseFloat(formula.getText().toString());
+                        Result = Result * SaveF;
                         break;
                     case 4:
-                        Result = Result / Float.parseFloat(formula.getText().toString());
+                        Result = Result / SaveF;
                         break;
                 }
                 TransformResult(Result);
@@ -194,3 +210,5 @@ public class MainActivity extends Activity {
         }
     }
 }
+
+
