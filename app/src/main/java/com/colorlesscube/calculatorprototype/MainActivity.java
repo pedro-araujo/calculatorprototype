@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.Window;
 
 public class MainActivity extends Activity {
-    int i, Oper, ResultInt, Oper1;
+    int i, Oper, ResultInt, Oper1 = 1;
     float Result = 0, SaveF;
 
     private prototypeEditText formula;
@@ -160,46 +160,53 @@ public class MainActivity extends Activity {
 
         switch (text) {
             case "+":
+                if (Oper1 != 1){
                 DoOperators();
                 DoText(text);
                 Result = Float.parseFloat(formula.getText().toString());
-                Oper = 1;Oper1 = 1;
+                Oper = 1;Oper1 = 1;}
                 break;
             case "-":
+                if (Oper1 != 1){
                 DoOperators();
                 DoText(text);
                 Result = Float.parseFloat(formula.getText().toString());
-                Oper = 2;Oper1 = 1;
+                Oper = 2;Oper1 = 1;}
                 break;
             case "*":
+                if (Oper1 != 1){
                 DoOperators();
                 DoText(text);
                 Result = Float.parseFloat(formula.getText().toString());
-                Oper = 3;Oper1 = 1;
+                Oper = 3;Oper1 = 1;}
                 break;
             case "/":
+                if (Oper1 != 1){
                 DoOperators();
                 DoText(text);
-                Result = Float.parseFloat(formula.getText().toString());
+                Result = Float.parseFloat(formula.getText().toString());}
                 Oper = 4;Oper1 = 1;
                 break;
             case "Sin":
+                if (Oper1 != 1){
                 Oper1 = 2;
                 history_1.setText(calc + text + "(" + calc1 + ")");
                 SaveF =  (float)Math.sin(Float.parseFloat(formula.getText().toString()));
-                TransformResult(SaveF);
+                TransformResult(SaveF);}
                 break;
             case "Cos":
+                if (Oper1 != 1){
                 Oper1 = 2;
                 history_1.setText(calc + text + "(" + calc1 + ")");
                 SaveF =  (float)Math.cos(Float.parseFloat(formula.getText().toString()));
-                TransformResult(SaveF);
+                TransformResult(SaveF);}
                 break;
             case "Tan":
+                if (Oper1 != 1){
                 Oper1 = 2;
                 history_1.setText(calc + text + "(" + calc1 + ")");
                 SaveF =  (float)Math.tan(Float.parseFloat(formula.getText().toString()));
-                TransformResult(SaveF);
+                TransformResult(SaveF);}
                 break;
             case "=":
                 history_1.setText("");
@@ -223,7 +230,7 @@ public class MainActivity extends Activity {
                         break;
                 }
                 TransformResult(Result);
-                Oper = 5; Result = 0;Oper1 = 1;
+                Oper = 5; Result = 0;Oper1 = 0;
                 break;
             default:
                 if (Oper1 != 0) {
