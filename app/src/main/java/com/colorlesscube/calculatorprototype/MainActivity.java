@@ -175,6 +175,24 @@ public class MainActivity extends Activity {
                 Result = Float.parseFloat(formula.getText().toString());
                 Oper = 4;Oper1 = 1;
                 break;
+            case "Sin":
+                DoOperators();
+                history_1.setText(calc + calc1 + text);
+                Result = Float.parseFloat(formula.getText().toString());
+                Oper = 6;Oper1 = 1;
+                break;
+            case "Cos":
+                DoOperators();
+                history_1.setText(calc + calc1 + text);
+                Result = Float.parseFloat(formula.getText().toString());
+                Oper = 7;Oper1 = 1;
+                break;
+            case "Tan":
+                DoOperators();
+                history_1.setText(calc + calc1 + text);
+                Result = Float.parseFloat(formula.getText().toString());
+                Oper = 8;Oper1 = 1;
+                break;
             case "=":
                 history_1.setText("");
                 if (Oper1 == 0) {SaveF = Float.parseFloat(formula.getText().toString());}
