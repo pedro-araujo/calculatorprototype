@@ -146,6 +146,18 @@ public class MainActivity extends Activity {
         }
     }
 
+    public void DoText (String text) {
+        String calc  = history_1.getText().toString();
+        String calc1 = formula.getText().toString();
+        if (Oper != 6 && Oper != 7 && Oper != 8){
+            history_1.setText(calc + calc1 + text);
+        }
+        else{
+            history_1.setText(calc + text);
+        }
+    }
+
+
     public void updateTextView(String text) {
         String calc  = history_1.getText().toString();
         String calc1 = formula.getText().toString();
@@ -153,45 +165,45 @@ public class MainActivity extends Activity {
         switch (text) {
             case "+":
                 DoOperators();
-                history_1.setText(calc + calc1 + text);
+                DoText(text);
                 Result = Float.parseFloat(formula.getText().toString());
                 Oper = 1;Oper1 = 1;
                 break;
             case "-":
                 DoOperators();
-                history_1.setText(calc + calc1 + text);
+                DoText(text);
                 Result = Float.parseFloat(formula.getText().toString());
                 Oper = 2;Oper1 = 1;
                 break;
             case "*":
                 DoOperators();
-                history_1.setText(calc + calc1 + text);
+                DoText(text);
                 Result = Float.parseFloat(formula.getText().toString());
                 Oper = 3;Oper1 = 1;
                 break;
             case "/":
                 DoOperators();
-                history_1.setText(calc + calc1 + text);
+                DoText(text);
                 Result = Float.parseFloat(formula.getText().toString());
                 Oper = 4;Oper1 = 1;
                 break;
             case "Sin":
-                DoOperators();
-                history_1.setText(calc + calc1 + text);
-                Result = Float.parseFloat(formula.getText().toString());
                 Oper = 6;Oper1 = 1;
+                history_1.setText(calc + text + "(" + calc1 + ")");
+                SaveF =  (float)Math.sin(Float.parseFloat(formula.getText().toString()));
+                TransformResult(SaveF);
                 break;
             case "Cos":
-                DoOperators();
-                history_1.setText(calc + calc1 + text);
-                Result = Float.parseFloat(formula.getText().toString());
                 Oper = 7;Oper1 = 1;
+                history_1.setText(calc + text + "(" + calc1 + ")");
+                SaveF =  (float)Math.cos(Float.parseFloat(formula.getText().toString()));
+                TransformResult(SaveF);
                 break;
             case "Tan":
-                DoOperators();
-                history_1.setText(calc + calc1 + text);
-                Result = Float.parseFloat(formula.getText().toString());
                 Oper = 8;Oper1 = 1;
+                history_1.setText(calc + text + "(" + calc1 + ")");
+                SaveF =  (float)Math.tan(Float.parseFloat(formula.getText().toString()));
+                TransformResult(SaveF);
                 break;
             case "=":
                 history_1.setText("");
