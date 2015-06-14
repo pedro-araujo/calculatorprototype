@@ -25,7 +25,6 @@ public class MainActivity extends Activity {
 
         formula = (prototypeEditText) findViewById(R.id.formula);
         history_1 = (prototypeEditText) findViewById(R.id.history_1);
-        history_2 = (prototypeEditText) findViewById(R.id.history_2);
     }
 
     @Override
