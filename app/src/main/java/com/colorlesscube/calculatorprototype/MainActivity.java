@@ -146,14 +146,13 @@ public class MainActivity extends Activity {
     public void DoText (String text) {
         String calc  = history_1.getText().toString();
         String calc1 = formula.getText().toString();
-        if (Oper != 6 && Oper != 7 && Oper != 8){
+        if (Oper1 != 2){
             history_1.setText(calc + calc1 + text);
         }
         else{
             history_1.setText(calc + text);
         }
     }
-
 
     public void updateTextView(String text) {
         String calc  = history_1.getText().toString();
@@ -185,27 +184,28 @@ public class MainActivity extends Activity {
                 Oper = 4;Oper1 = 1;
                 break;
             case "Sin":
-                Oper = 6;Oper1 = 1;
+                Oper1 = 2;
                 history_1.setText(calc + text + "(" + calc1 + ")");
                 SaveF =  (float)Math.sin(Float.parseFloat(formula.getText().toString()));
                 TransformResult(SaveF);
                 break;
             case "Cos":
-                Oper = 7;Oper1 = 1;
+                Oper1 = 2;
                 history_1.setText(calc + text + "(" + calc1 + ")");
                 SaveF =  (float)Math.cos(Float.parseFloat(formula.getText().toString()));
                 TransformResult(SaveF);
                 break;
             case "Tan":
-                Oper = 8;Oper1 = 1;
+                Oper1 = 2;
                 history_1.setText(calc + text + "(" + calc1 + ")");
                 SaveF =  (float)Math.tan(Float.parseFloat(formula.getText().toString()));
                 TransformResult(SaveF);
                 break;
             case "=":
                 history_1.setText("");
-                if (Oper1 == 0) {SaveF = Float.parseFloat(formula.getText().toString());}
+                if (Oper1 == 0 || Oper1 == 2) {SaveF = Float.parseFloat(formula.getText().toString());}
                 else{SaveF = 0;}
+                if (Oper == 5){Result = Float.parseFloat(formula.getText().toString());}
                 switch (Oper) {
                     case 1:
                         Result = Result + SaveF;
@@ -214,9 +214,11 @@ public class MainActivity extends Activity {
                         Result = Result - SaveF;
                         break;
                     case 3:
+                        if (SaveF == 0){SaveF = 1;} // lei do cacete
                         Result = Result * SaveF;
                         break;
                     case 4:
+                        if (SaveF == 0){SaveF = 1;} // lei do cacete
                         Result = Result / SaveF;
                         break;
                 }
