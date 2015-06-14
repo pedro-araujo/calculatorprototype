@@ -4,18 +4,30 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/numericpad_advanced"
     android:columnCount="1"
-    android:rowCount="2"
+    android:rowCount="4"
     style="@style/NumericPadAdvancedStyle">
+
+    <Button
+        android:id="@+id/button_sine"
+        android:onClick="onClickListenerSine"
+        android:text="@string/sine"
+        style="@style/NumericPadAdvancedButtonStyle"/>
+
+    <Button
+        android:id="@+id/button_cosine"
+        android:onClick="onClickListenerCosine"
+        android:text="@string/cosine"
+        style="@style/NumericPadAdvancedButtonStyle"/>
+
+    <Button
+        android:id="@+id/button_tangent"
+        android:onClick="onClickListenerTangent"
+        android:text="@string/tangent"
+        style="@style/NumericPadAdvancedButtonStyle"/>
 
     <Button
         android:id="@+id/button_clr"
         android:onClick="onClickListenerClr"
         android:text="@string/clr"
-        style="@style/NumericPadAdvancedButtonStyle"/>
-
-    <Button
-        android:id="@+id/button_equal"
-        android:onClick="onClickListenerEqual"
-        android:text="@string/equal"
         style="@style/NumericPadAdvancedButtonStyle"/>
 </com.colorlesscube.calculatorprototype.prototypePadLayout>
