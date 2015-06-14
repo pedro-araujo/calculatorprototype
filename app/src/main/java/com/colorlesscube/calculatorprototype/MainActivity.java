@@ -13,7 +13,6 @@ public class MainActivity extends Activity {
 
     private prototypeEditText formula;
     private prototypeEditText history_1;
-    private prototypeEditText history_2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +22,6 @@ public class MainActivity extends Activity {
 
         formula = (prototypeEditText) findViewById(R.id.formula);
         history_1 = (prototypeEditText) findViewById(R.id.history_1);
-        history_2 = (prototypeEditText) findViewById(R.id.history_2);
     }
 
     @Override
@@ -85,7 +83,6 @@ public class MainActivity extends Activity {
     public void onClickListenerClr(View v) {
         formula.setText("");
         history_1.setText("");
-        history_2.setText("");
         Result = 0;
     }
 
