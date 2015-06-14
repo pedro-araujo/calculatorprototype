@@ -184,8 +184,8 @@ public class MainActivity extends Activity {
                 if (Oper1 != 1){
                 DoOperators();
                 DoText(text);
-                Result = Float.parseFloat(formula.getText().toString());}
-                Oper = 4;Oper1 = 1;
+                Result = Float.parseFloat(formula.getText().toString());
+                Oper = 4;Oper1 = 1;}
                 break;
             case "Sin":
                 if (Oper1 != 1){
