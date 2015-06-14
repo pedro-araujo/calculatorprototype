@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.Window;
 
 public class MainActivity extends Activity {
-    int i, Oper, ResultInt, Oper1 = 1;
+    int i, Oper, ResultInt, Oper1 = 0;
     float Result = 0, SaveF;
 
     private prototypeEditText formula;
@@ -22,6 +22,8 @@ public class MainActivity extends Activity {
 
         formula = (prototypeEditText) findViewById(R.id.formula);
         history_1 = (prototypeEditText) findViewById(R.id.history_1);
+
+        formula.setText("0");
     }
 
     @Override
@@ -46,9 +48,7 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void onClickListener0(View v) {
-        updateTextView("0");
-    }
+    public void onClickListener0(View v) {updateTextView("0"); }
 
     public void onClickListener1(View v) { updateTextView("1"); }
 
@@ -56,34 +56,22 @@ public class MainActivity extends Activity {
 
     public void onClickListener3(View v) { updateTextView("3"); }
 
-    public void onClickListener4(View v) {
-        updateTextView("4");
-    }
+    public void onClickListener4(View v) {updateTextView("4");}
 
-    public void onClickListener5(View v) {
-        updateTextView("5");
-    }
+    public void onClickListener5(View v) {updateTextView("5");}
 
-    public void onClickListener6(View v) {
-        updateTextView("6");
-    }
+    public void onClickListener6(View v) {updateTextView("6");}
 
-    public void onClickListener7(View v) {
-        updateTextView("7");
-    }
+    public void onClickListener7(View v) {updateTextView("7");}
 
-    public void onClickListener8(View v) {
-        updateTextView("8");
-    }
+    public void onClickListener8(View v) {updateTextView("8");}
 
-    public void onClickListener9(View v) {
-        updateTextView("9");
-    }
+    public void onClickListener9(View v) {updateTextView("9");}
 
     public void onClickListenerClr(View v) {
-        formula.setText("");
+        formula.setText("0");
         history_1.setText("");
-        Result = 0;
+        Result = 0;Oper1 = 0;
     }
 
     public void onClickListenerPlus(View v) { updateTextView("+"); }
