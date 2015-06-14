@@ -10,8 +10,6 @@ import android.view.Window;
 public class MainActivity extends Activity {
     int i, Oper, ResultInt, Oper1;
     float Result = 0, SaveF;
-    String[] SaveRes = new String[100];
-    String token;
 
     private prototypeEditText formula;
     private prototypeEditText history_1;
@@ -54,17 +52,11 @@ public class MainActivity extends Activity {
         updateTextView("0");
     }
 
-    public void onClickListener1(View v) {
-        updateTextView("1");
-    }
+    public void onClickListener1(View v) { updateTextView("1"); }
 
-    public void onClickListener2(View v) {
-        updateTextView("2");
-    }
+    public void onClickListener2(View v) { updateTextView("2"); }
 
-    public void onClickListener3(View v) {
-        updateTextView("3");
-    }
+    public void onClickListener3(View v) { updateTextView("3"); }
 
     public void onClickListener4(View v) {
         updateTextView("4");
@@ -97,21 +89,13 @@ public class MainActivity extends Activity {
         Result = 0;
     }
 
-    public void onClickListenerPlus(View v) {
-        updateTextView("+");
-    }
+    public void onClickListenerPlus(View v) { updateTextView("+"); }
 
-    public void onClickListenerMinus(View v) {
-        updateTextView("-");
-    }
+    public void onClickListenerMinus(View v) { updateTextView("-"); }
 
-    public void onClickListenerTimes(View v) {
-        updateTextView("*");
-    }
+    public void onClickListenerTimes(View v) {updateTextView("*"); }
 
-    public void onClickListenerDiv(View v) {
-        updateTextView("/");
-    }
+    public void onClickListenerDiv(View v) { updateTextView("/"); }
 
     public void onClickListenerDot(View v) {
         updateTextView(".");
@@ -120,6 +104,19 @@ public class MainActivity extends Activity {
     public void onClickListenerEqual(View v) {
         updateTextView("=");
     }
+
+    public void onClickListenerSine(View v) {
+        updateTextView("Sin");
+    }
+
+    public void onClickListenerCosine(View v) {
+        updateTextView("Cos");
+    }
+
+    public void onClickListenerTangent(View v) {
+        updateTextView("Tan");
+    }
+
 
     public void TransformResult (float Res){
         if (Res == Math.round(Result)) {
